@@ -1,0 +1,73 @@
+.frame {
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 400px;
+	height: 400px;
+	margin-top: -200px;
+	margin-left: -200px;
+	border-radius: 2px;
+	box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+	overflow: hidden;
+	background: #3d220d;
+	color: #333;
+}
+
+.circle {
+	pointer-events: none;
+	position: absolute;
+	width: 25px;
+	height: 25px;
+	border-radius: 100%;
+	background-color: #f72d2d;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.ripple-container {
+	position: relative;
+}
+
+.ripple-effect {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	border: 1px solid #f72d2d;
+	width: 25px;
+	height: 25px;
+	border-radius: 100%;
+	-webkit-animation: increase ease-out 2s infinite;
+	animation: increase ease-out 2s infinite;
+}
+
+@-webkit-keyframes increase {
+	0% {
+		transform: scale(0.5);
+		opacity: 1;
+	}
+	50% {
+		transform: scale(3) rotateX(180deg) rotateY(180deg);
+		opacity: 0;
+	}
+	100%{
+		transform: scale(3) rotateX(180deg) rotateY(360deg);
+		opacity: 0;
+	}
+}
+
+@keyframes increase {
+	0% {
+		transform: scale(0.5);
+		opacity: 1;
+	}
+	50% {
+		transform: scale(3) rotateX(180deg) rotateY(180deg);
+		opacity: 1;
+	}
+	100%{
+		transform: scale(3) rotateX(180deg) rotateY(360deg);
+		opacity: 0;
+	}
+}
